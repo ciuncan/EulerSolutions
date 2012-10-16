@@ -15,7 +15,7 @@ trait BaseProblem {
     import Implicits._
     val start = System nanoTime()
     val s = solve
-    val t = (System.nanoTime() - start) / (10 ^^ 9 toDouble)
+    val t = (System.nanoTime() - start) / (10 ** 9)
     s"Solution is :\n$s\nTime took: $t seconds" printMe
   }
 
@@ -42,6 +42,9 @@ trait BaseProblem {
         }
         iterate(m)
       }
+
+      def ! : I = n * ((n - one) !)
+
     }
 
     implicit class AnyOption(a: Any) {
