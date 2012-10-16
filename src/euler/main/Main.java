@@ -16,8 +16,8 @@ public class Main {
     int num;
     if (args.length > 0) {
       num = Integer.parseInt(args[0]);
-    } {
-      num = 17;
+    } else {
+      num = 20;
     }
     String className = format("euler.problems.Problem%03d", num);
     BaseProblem problem = (BaseProblem) Class.forName(className).newInstance();
