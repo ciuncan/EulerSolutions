@@ -34,6 +34,7 @@ trait BaseProblem {
 
       def **(m: I) = Math.pow(n toDouble, m toDouble)
 
+      //GRRRrrr!!! Couldn't make this one tailrecursive!  >:(
       def ^^(m: I) = {
         def iterate(exp:I):I = exp match {
           case _ if exp == zero => one
@@ -47,6 +48,14 @@ trait BaseProblem {
 
     }
 
+    /**
+     * I don't like using parentheses or dots to call methods, especially 
+     * for printing. Using this prefix method, without using dot, one can
+     * call printMe. 
+     * 
+     * TODO: Maybe a symbol could be better for method name.
+     * 
+     */
     implicit class AnyOption(a: Any) {
       def printMe = println(a)
     }
