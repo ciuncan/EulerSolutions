@@ -25,21 +25,14 @@ class Problem017 extends BaseProblem {
           case 11 => "eleven"
           case 12 => "twelve"
           case 13 => "thirteen"
-          case 14 => "fourteen"
           case 15 => "fifteen"
-          case 16 => "sixteen"
-          case 17 => "seventeen"
-          case 18 => "eighteen"
-          case 19 => "nineteen"
+          case  _ => num2word(n % 10) + "teen"
         }
         case 2 => "twenty"
         case 3 => "thirty"
         case 4 => "forty"
         case 5 => "fifty"
-        case 6 => "sixty"
-        case 7 => "seventy"
-        case 8 => "eighty"
-        case 9 => "ninety"
+        case _ => num2word(tens) + "ty"
       }
       val rest = n - 10 * tens
       tensStr + (if (rest > 0 && tens != 1) "" + num2word(rest) else "")
